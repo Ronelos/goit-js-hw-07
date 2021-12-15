@@ -13,6 +13,7 @@ const galleryEl = galleryItems.map(({preview, original, description}) => `<div c
 </div>`).join("");
 
 const fullScreen = event => {
+  window.addEventListener('keydown', keyEsc);
     event.preventDefault();
     const isImg = event.target.classList.contains("gallery__image");
     if (!isImg) return;
@@ -20,7 +21,12 @@ const fullScreen = event => {
     <img src="${event.target.getAttribute("data-source")}"> `);
 
 instance.show()
-    console.log(event.target);
+    
+function keyEsc (event) {
+  if(event.code === 'Escape'){
+      instance.close();
+  }
+}   
 }
 
 const gallery = document.querySelector(".gallery");
