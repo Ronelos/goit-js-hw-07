@@ -34,4 +34,4 @@ function openSimpleLightBox (event) {
     gallery.on('error.simplelightbox', function (e) {
         console.log(e); // some usefull information
     });
-}
+} 
